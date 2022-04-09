@@ -1,0 +1,2 @@
+# djangoSDA
+Excercises
