@@ -2,3 +2,4 @@ DjangoVENV/
 db.sqlite3
 .idea/
 __pycache__/
+books.json
