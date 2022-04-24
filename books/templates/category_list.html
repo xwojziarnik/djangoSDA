@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>My Categories</h2>
+    <ul>
+    {% for category in categories %}
+        <li>{{ category }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
