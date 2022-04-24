@@ -9,7 +9,7 @@ from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView, ListView, DetailView, FormView, CreateView, UpdateView
 
-from books.forms import CategoryForm, logger, AuthorForm
+from books.forms import CategoryForm, logger, AuthorForm, BookForm
 from books.models import BookAuthor, Category, Book
 
 
@@ -66,6 +66,25 @@ class AuthorUpdateView(UpdateView):
 
     def get_object(self, **kwargs):
         return get_object_or_404(BookAuthor, id=self.kwargs.get("pk"))
+
+#zadanie 13
+class BookCreateView(CreateView):
+    template_name = "book_form.html"
+    form_class = BookForm
+    success_url = reverse_lazy("book_list")
+
+    def get_object(self, **kwargs):
+        return get_object_or_404(Book, id=self.kwargs.get("pk"))
+
+#zadanie 14
+
+class BookUpdateView(UpdateView):
+    template_name = "book_form.html"
+    form_class = BookForm
+    success_url = reverse_lazy("book_list")
+
+    def get_object(self, **kwargs):
+        return get_object_or_404(Book, id=self.kwargs.get("pk"))
 
 #11
 def get_hello(request: WSGIRequest) -> HttpResponse:
