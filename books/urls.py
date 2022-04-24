@@ -19,5 +19,4 @@ urlpatterns = [
     path('category-create/', CategoryCreateFormView.as_view(), name="category_create"),
     path('author-create/', AuthorCreateView.as_view(), name="author_create"),
     path('author-update/<int:pk>/', AuthorUpdateView.as_view(), name="author_update")
-
 ]
