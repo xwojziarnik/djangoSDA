@@ -71,17 +71,20 @@ class AuthorUpdateView(UpdateView):
 class BookCreateView(CreateView):
     template_name = "book_form.html"
     form_class = BookForm
-    success_url = reverse_lazy("book_list")
+    # success_url = reverse_lazy("book_list")
 
-    def get_object(self, **kwargs):
-        return get_object_or_404(Book, id=self.kwargs.get("pk"))
+    def get_success_url(self):
+        return reverse_lazy("book_list")
 
 #zadanie 14
 
 class BookUpdateView(UpdateView):
     template_name = "book_form.html"
     form_class = BookForm
-    success_url = reverse_lazy("book_list")
+    # success_url = reverse_lazy("book_list")
+
+    def get_success_url(self):
+        return reverse_lazy("book_list")
 
     def get_object(self, **kwargs):
         return get_object_or_404(Book, id=self.kwargs.get("pk"))
