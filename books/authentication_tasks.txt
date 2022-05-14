@@ -8,8 +8,8 @@
     - gdy podasz dobre hasło
     - gdy podasz zle hasło
 7. Wejdz do metody authenticate z uzyciem pycharm (ctrl i lewy myszy)                                       done
-8. Wejdz do metody set_password z uzyciem pycharm
-9. Dodaj nowa aplikacje dla uzytkownikow i dodaj w aplikacji plik utils.py
+8. Wejdz do metody set_password z uzyciem pycharm                                                           done
+9. Dodaj nowa aplikacje dla uzytkownikow i dodaj w aplikacji plik utils.py                                  done
 10. Przygotuj wlasna funkcje hashujaca bez solenia.
 11. Napisz wlasna funkcje weryfikujaca haslo bez solenia.
 12. Przygotuj wlasna funkcje hashujaca wykorzystaj solenie.
