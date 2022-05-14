@@ -1,13 +1,13 @@
-1. Zmerguj wszystkie poprzednie branche do master i wyslij na github
-2. Utworz nowy branch django_auth i przelacz sie na niego
-3. Wejdz do django shell i tam utworz uzytkownika (uzyj metody create_user).
-4. W django shell pobierz uytkownika i wyswietl jego hasło. Jaki jest efekt?
-5. Zmien haslo i wyswietl ponownie (metoda set_password z django auth).
-    - metoda na modelu zamienia haslo plain text na zaszyfrowane(hashowane)
+1. Zmerguj wszystkie poprzednie branche do master i wyslij na github                                        done
+2. Utworz nowy branch django_auth i przelacz sie na niego                                                   done
+3. Wejdz do django shell i tam utworz uzytkownika (uzyj metody create_user).                                done
+4. W django shell pobierz uytkownika i wyswietl jego hasło. Jaki jest efekt?                                done
+5. Zmien haslo i wyswietl ponownie (metoda set_password z django auth).                                     done
+    - metoda na modelu zamienia haslo plain text na zaszyfrowane(hashowane)                                 done
 6. Wykorzystaj metode authenticate (z django auth) aby zasymuloac autoryzacje i sprawdz jak dziala:
     - gdy podasz dobre hasło
     - gdy podasz zle hasło
-7. Wejdz do metody authenticate z uzyciem pycharm (ctrl i lewy myszy)
+7. Wejdz do metody authenticate z uzyciem pycharm (ctrl i lewy myszy)                                       done
 8. Wejdz do metody set_password z uzyciem pycharm
 9. Dodaj nowa aplikacje dla uzytkownikow i dodaj w aplikacji plik utils.py
 10. Przygotuj wlasna funkcje hashujaca bez solenia.
