@@ -62,7 +62,11 @@ LOGGING = {
     },
     'root': {
         'handlers': ['console'],
+<<<<<<< HEAD
         'level': 'DEBUG',
+=======
+        'level': 'INFO',
+>>>>>>> cbv_and_forms
     },
 }
 
