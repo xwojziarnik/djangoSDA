@@ -10,8 +10,8 @@
 7. Wejdz do metody authenticate z uzyciem pycharm (ctrl i lewy myszy)                                       done
 8. Wejdz do metody set_password z uzyciem pycharm                                                           done
 9. Dodaj nowa aplikacje dla uzytkownikow i dodaj w aplikacji plik utils.py                                  done
-10. Przygotuj wlasna funkcje hashujaca bez solenia.
-11. Napisz wlasna funkcje weryfikujaca haslo bez solenia.
+10. Przygotuj wlasna funkcje hashujaca bez solenia.                                                         done
+11. Napisz wlasna funkcje weryfikujaca haslo bez solenia.                                                   done
 12. Przygotuj wlasna funkcje hashujaca wykorzystaj solenie.
 13. Napisz wlasna funkcje weryfikujaca haslo z soleniem.
 14. Przygotuj formularz html do rejestracji (signup) oraz klase formularz
