@@ -1,0 +1,29 @@
+- CBV
+1. Utwórz branch cbv_and_forms
+2. Przełącz sie na nowy branch
+3. Utwórz widok zwracający listę autorów przy pomocy dziedziczenia z klasy View.
+4. Utwórz widok zwracający listę kategorii przy pomocy dziedziczenia z klasy TemplateView.
+5. Utwórz widok zwracający listę ksiązek w oparciu o dziedziczenie z klasy ListView.
+    - Gdy skończysz dodaj paginację
+6. Przygotuj widok pojedynczego obiektu ksiazki dziedziczac z DetailView
+    a) przygotuj widok ktory korzysta z metody get_object()
+    b) przygotuj widok ktory korzysta z atrybutu queryset
+- CBV + FORMS
+7. Przygotuj Formularz (html + klasa) do zapisu obiektu kategoria (dziedziczac z klasy Form)
+    - nadpisz metodę clean_name i wyprintuj obiekt sefl.cleaned_data
+8. Utwórz widok zapisujący kategorie przy pomocy dziedziczenia z klasy FormView.
+    *Przypominajka - Operacje zapisu wykonuje sie porzez metodę HTTP POST a operację wyświetlenia formularza przez metodę GET
+9. Przygotuj Formularz (html + klasa) do zapisu obiektu autor (dziedziczac z klasy ModelForm)
+10. Przygotuj Formularz (html + klasa) do zapisu obiektu ksiazka (dziedziczac z klasy ModelForm)
+11. Utwórz widok zapisujący autora przy pomocy dziedziczenia z klasy CreateView.
+12. Utwórz widok aktualizujacy(update) autora z uzyciem dziedziczenia z klasy UpdateView.
+    - wykorzystaj formularz z zadania 9ego - formularza do stworzenia autora
+13. Utwórz widok zapisujący ksiazke przy pomocy dziedziczenia z klasy CreateView.
+    a) przetestuj tworzenie obiektu z metodą get_success_url w klasie widoku
+    b) przetestuj tworzenie obiektu z atrybutem success_url w klasie widoku
+14. Utwórz widok aktualizujacy(update) ksiazke z uzyciem dziedziczenia z klasy UpdateView.
+    - wykorzystaj formularz z zadania 10ego - formularza do stworzenia ksiazki
+14. Utwórz formularz potwierdzajacy usuniecie ksiązki.
+15. Utwórz widok usuwający ksiazke z uzyciem dziedziczenia z klasy DeleteView.
+* Zadanie dodatkowe
+16. Na liście obiektów dodaj przejscie z listy obiektu do detalu a tam opcje dodawania i usuwania (przydatna moze byc metoda w modelu get_absolute_url)
