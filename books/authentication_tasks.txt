@@ -12,11 +12,11 @@
 9. Dodaj nowa aplikacje dla uzytkownikow i dodaj w aplikacji plik utils.py                                  done
 10. Przygotuj wlasna funkcje hashujaca bez solenia.                                                         done
 11. Napisz wlasna funkcje weryfikujaca haslo bez solenia.                                                   done
-12. Przygotuj wlasna funkcje hashujaca wykorzystaj solenie.
-13. Napisz wlasna funkcje weryfikujaca haslo z soleniem.
-14. Przygotuj formularz html do rejestracji (signup) oraz klase formularz
-15. Przygotuj widok do rejestracji uzytkownika i dodaj go do urls
-16. Przetestuj rejestracje i sprawdz rezultat w django shell
+12. Przygotuj wlasna funkcje hashujaca wykorzystaj solenie.                                                 done
+13. Napisz wlasna funkcje weryfikujaca haslo z soleniem.                                                    done
+14. Przygotuj formularz html do rejestracji (signup) oraz klase formularz                                   done
+15. Przygotuj widok do rejestracji uzytkownika i dodaj go do urls                                           done
+16. Przetestuj rejestracje i sprawdz rezultat w django shell                                                done
 17. Przygotuj formularz html do logowania
 18. Dodaj widok logowania i dodaj go do url
 19. Dodaj widok wylogowania
