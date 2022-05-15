@@ -23,8 +23,8 @@
 20. Dodaj widok home w ktorym sprawdzisz czy uzytkownik jest zalogowany czy nie
     - Dla zalogowanych dodaj przycisk wyloguj
     - Dla wylogowanych dodaj przycisk przenoszacy do formularza logowania
-21. Utworz funkcje FBV ktory nie wymaga logowania z góry i loguje informacje o anonymous user a             done
-    nastepnie rzuca wyjatek dla nieautoryzowanego uzytkownika
-22. Funkcje z poprzedniego zadania przerób zabezpieczajac dekoratorem wymagajacym logowania.
-    Sprobuj tez wejsc tam z a potem bez logowania (dodaj zmienna LOGIN_URL do settings)
+21. Utworz funkcje FBV ktory nie wymaga logowania z góry i loguje informacje o anonymous user               done
+    a nastepnie rzuca wyjatek dla nieautoryzowanego uzytkownika
+22. Funkcje z poprzedniego zadania przerób zabezpieczajac dekoratorem wymagajacym logowania.                done
+    Sprobuj tez wejsc tam z a potem bez logowania (dodaj zmienna LOGIN_URL do settings)                     done
 23. Zrob widok UserListView ktory wymaga logowania (uzyj mixin).
