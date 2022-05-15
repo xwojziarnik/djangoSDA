@@ -17,8 +17,8 @@
 14. Przygotuj formularz html do rejestracji (signup) oraz klase formularz                                   done
 15. Przygotuj widok do rejestracji uzytkownika i dodaj go do urls                                           done
 16. Przetestuj rejestracje i sprawdz rezultat w django shell                                                done
-17. Przygotuj formularz html do logowania
-18. Dodaj widok logowania i dodaj go do url
+17. Przygotuj formularz html do logowania                                                                   done
+18. Dodaj widok logowania i dodaj go do url                                                                 done
 19. Dodaj widok wylogowania
 20. Dodaj widok home w ktorym sprawdzisz czy uzytkownik jest zalogowany czy nie
     - Dla zalogowanych dodaj przycisk wyloguj
