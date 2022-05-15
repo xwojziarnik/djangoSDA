@@ -1,0 +1,10 @@
+# authorization
+1. Wejdz do django shell zaimportuj "from django.contrib.auth.models import Permission"                         done
+    i wyswietl domyslne uprawnienia django
+2. Dodaj uzytkownikowi uprawnienia do wyswietlania ksiazek                                                      done
+3. Dodaj uzytkownikowi uprawnienia do dodawania ksiazek
+4. Dodaj uzytkownikowi uprawnienia do update-u ksiazek
+5. Dodaj uzytkownikowi uprawnienia do usuwania ksiazek
+*6. Dodaj 4 uzytkownikow i kazdemu inne uprawnienia, nastepnie przetestuj je w przegladarce,
+    odpowiednie widoki Ksiazek ListView, UpdateView, CreateView, DeleteView zabezpiecz pod katem uprawnien
+- Pomocna bedzie domieszka PermissionRequiredMixin i atrybut permission_required

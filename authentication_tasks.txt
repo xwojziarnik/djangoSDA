@@ -27,4 +27,4 @@
     a nastepnie rzuca wyjatek dla nieautoryzowanego uzytkownika
 22. Funkcje z poprzedniego zadania przerób zabezpieczajac dekoratorem wymagajacym logowania.                done
     Sprobuj tez wejsc tam z a potem bez logowania (dodaj zmienna LOGIN_URL do settings)                     done
-23. Zrob widok UserListView ktory wymaga logowania (uzyj mixin).
+23. Zrob widok UserListView ktory wymaga logowania (uzyj mixin).                                            done

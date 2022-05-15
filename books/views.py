@@ -1,6 +1,7 @@
 from uuid import uuid4
 
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.exceptions import BadRequest, PermissionDenied
 from django.core.handlers.wsgi import WSGIRequest
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
@@ -30,14 +31,16 @@ class CategoryListTemplateView(TemplateView):
     template_name = "category_list.html"
     extra_context = {"categories": Category.objects.all()} # type: ignore
 
-class BookListView(ListView):
+class BookListView(PermissionRequiredMixin, ListView):
     template_name = "books_list.html"
     model = Book
     paginate_by = 10
+    permission_required = 'books.view_book'
 
-class BookDetailsView(DetailView):
+class BookDetailsView(PermissionRequiredMixin, DetailView):
     template_name = "book_details.html"
     model = Book
+    permission_required = 'books.view_book'
 
     def get_object(self, **kwargs):
         return get_object_or_404(Book, id=self.kwargs.get("pk"))
@@ -73,9 +76,10 @@ class AuthorUpdateView(UpdateView):
         return get_object_or_404(BookAuthor, id=self.kwargs.get("pk"))
 
 #zadanie 13
-class BookCreateView(CreateView):
+class BookCreateView(PermissionRequiredMixin, CreateView):
     template_name = "book_form.html"
     form_class = BookForm
+    permission_required = 'books.add_book'
     # success_url = reverse_lazy("book_list")
 
     def get_success_url(self):
@@ -83,9 +87,10 @@ class BookCreateView(CreateView):
 
 #zadanie 14
 
-class BookUpdateView(DeleteView):
+class BookUpdateView(PermissionRequiredMixin, DeleteView):
     template_name = "book_form.html"
     form_class = BookForm
+    permission_required = 'books.change_book'
     # success_url = reverse_lazy("book_list")
 
     def get_success_url(self):
@@ -96,10 +101,11 @@ class BookUpdateView(DeleteView):
 
 # zadanie 15
 
-class BookDeleteView(DeleteView):
+class BookDeleteView(PermissionRequiredMixin, DeleteView):
     template_name = "book_delete.html"
     model = Book
     success_url = reverse_lazy("book_list")
+    permission_required = 'books.delete_book'
 
     def get_object(self, **kwargs):
         return get_object_or_404(Book, id=self.kwargs.get("pk"))

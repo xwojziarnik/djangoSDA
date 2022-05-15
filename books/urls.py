@@ -1,9 +1,14 @@
 from django.urls import path
 
+from django.contrib import admin
+
+from books.models import Book
 from books.views import get_uuids_a, get_uuids_b, get_argument_from_path, get_argument_from_query, \
     check_http_query_type, get_headers, raise_error_for_fun, AuthorListBasedView, CategoryListTemplateView, \
     BookListView, BookDetailsView, CategoryCreateFormView, AuthorCreateView, AuthorUpdateView, BookCreateView, \
     BookUpdateView, BookDeleteView
+
+admin.site.register(Book)
 
 urlpatterns = [
     path('uuids-a', get_uuids_a),
