@@ -1,13 +1,16 @@
 from uuid import uuid4
 
-from django.core.exceptions import BadRequest
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.core.exceptions import BadRequest, PermissionDenied
 from django.core.handlers.wsgi import WSGIRequest
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView, ListView, DetailView, FormView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.models import User
 
 from books.forms import CategoryForm, logger, AuthorForm, BookForm
 from books.models import BookAuthor, Category, Book
@@ -28,14 +31,16 @@ class CategoryListTemplateView(TemplateView):
     template_name = "category_list.html"
     extra_context = {"categories": Category.objects.all()} # type: ignore
 
-class BookListView(ListView):
+class BookListView(PermissionRequiredMixin, ListView):
     template_name = "books_list.html"
     model = Book
     paginate_by = 10
+    permission_required = 'books.view_book'
 
-class BookDetailsView(DetailView):
+class BookDetailsView(PermissionRequiredMixin, DetailView):
     template_name = "book_details.html"
     model = Book
+    permission_required = 'books.view_book'
 
     def get_object(self, **kwargs):
         return get_object_or_404(Book, id=self.kwargs.get("pk"))
@@ -71,9 +76,10 @@ class AuthorUpdateView(UpdateView):
         return get_object_or_404(BookAuthor, id=self.kwargs.get("pk"))
 
 #zadanie 13
-class BookCreateView(CreateView):
+class BookCreateView(PermissionRequiredMixin, CreateView):
     template_name = "book_form.html"
     form_class = BookForm
+    permission_required = 'books.add_book'
     # success_url = reverse_lazy("book_list")
 
     def get_success_url(self):
@@ -81,9 +87,10 @@ class BookCreateView(CreateView):
 
 #zadanie 14
 
-class BookUpdateView(DeleteView):
+class BookUpdateView(PermissionRequiredMixin, DeleteView):
     template_name = "book_form.html"
     form_class = BookForm
+    permission_required = 'books.change_book'
     # success_url = reverse_lazy("book_list")
 
     def get_success_url(self):
@@ -94,18 +101,28 @@ class BookUpdateView(DeleteView):
 
 # zadanie 15
 
-class BookDeleteView(DeleteView):
+class BookDeleteView(PermissionRequiredMixin, DeleteView):
     template_name = "book_delete.html"
     model = Book
     success_url = reverse_lazy("book_list")
+    permission_required = 'books.delete_book'
 
     def get_object(self, **kwargs):
         return get_object_or_404(Book, id=self.kwargs.get("pk"))
 
 #11
+@login_required
 def get_hello(request: WSGIRequest) -> HttpResponse:
-    hello = "Hello world!"
-    return render(request, template_name="hello_world.html", context={"hello_var":hello})
+    user: User = request.user  # type: ignore
+    # password = None if user.is_anonymous else user.password
+    # email = None if user.is_anonymous else user.email
+    # date_joined = None if user.is_anonymous else user.date_joined
+    # if not user.is_authenticated:
+    #     # raise PermissionDenied()
+    #     return HttpResponseRedirect(reverse('login'))
+    is_auth: bool = user.is_authenticated
+    hello = f"Hello {user.username}. That's your password: {user.password}, your email: {user.email} and date you joined: {user.date_joined}"
+    return render(request, template_name="hello_world.html", context={"hello_var":hello, "is_authenticated": is_auth})
 
 # 12. Utwórz funkcję zwracającą listę stringów. Stringi niech będą losowym UUID dodawanym do listy. Lista niech posiada 10 elementów.
 #

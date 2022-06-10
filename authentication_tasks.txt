@@ -1,0 +1,30 @@
+1. Zmerguj wszystkie poprzednie branche do master i wyslij na github                                        done
+2. Utworz nowy branch django_auth i przelacz sie na niego                                                   done
+3. Wejdz do django shell i tam utworz uzytkownika (uzyj metody create_user).                                done
+4. W django shell pobierz uytkownika i wyswietl jego hasło. Jaki jest efekt?                                done
+5. Zmien haslo i wyswietl ponownie (metoda set_password z django auth).                                     done
+    - metoda na modelu zamienia haslo plain text na zaszyfrowane(hashowane)                                 done
+6. Wykorzystaj metode authenticate (z django auth) aby zasymuloac autoryzacje i sprawdz jak dziala:
+    - gdy podasz dobre hasło
+    - gdy podasz zle hasło
+7. Wejdz do metody authenticate z uzyciem pycharm (ctrl i lewy myszy)                                       done
+8. Wejdz do metody set_password z uzyciem pycharm                                                           done
+9. Dodaj nowa aplikacje dla uzytkownikow i dodaj w aplikacji plik utils.py                                  done
+10. Przygotuj wlasna funkcje hashujaca bez solenia.                                                         done
+11. Napisz wlasna funkcje weryfikujaca haslo bez solenia.                                                   done
+12. Przygotuj wlasna funkcje hashujaca wykorzystaj solenie.                                                 done
+13. Napisz wlasna funkcje weryfikujaca haslo z soleniem.                                                    done
+14. Przygotuj formularz html do rejestracji (signup) oraz klase formularz                                   done
+15. Przygotuj widok do rejestracji uzytkownika i dodaj go do urls                                           done
+16. Przetestuj rejestracje i sprawdz rezultat w django shell                                                done
+17. Przygotuj formularz html do logowania                                                                   done
+18. Dodaj widok logowania i dodaj go do url                                                                 done
+19. Dodaj widok wylogowania                                                                                 done
+20. Dodaj widok home w ktorym sprawdzisz czy uzytkownik jest zalogowany czy nie
+    - Dla zalogowanych dodaj przycisk wyloguj
+    - Dla wylogowanych dodaj przycisk przenoszacy do formularza logowania
+21. Utworz funkcje FBV ktory nie wymaga logowania z góry i loguje informacje o anonymous user               done
+    a nastepnie rzuca wyjatek dla nieautoryzowanego uzytkownika
+22. Funkcje z poprzedniego zadania przerób zabezpieczajac dekoratorem wymagajacym logowania.                done
+    Sprobuj tez wejsc tam z a potem bez logowania (dodaj zmienna LOGIN_URL do settings)                     done
+23. Zrob widok UserListView ktory wymaga logowania (uzyj mixin).                                            done
